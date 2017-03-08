@@ -2,23 +2,19 @@
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
+The only necessary thing to have would be Ruby on Rails 5.0.1 and Bootstrap.
 
-Things you may want to cover:
+From the last "Blog" series this contains improves in:
 
-* Ruby version
+* Views
 
-* System dependencies
+* A more complex (at least for me) of controller's commands
 
-* Configuration
+* Basic authentication method to create accounts with password, email (without the verification process), name and a session
 
-* Database creation
+* More profile individualism
 
-* Database initialization
+* And a lot of things i tried to do, so i could learn about rails
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thank you for your time, i hope you found at the very least amusing to read the code, and that if you find some bugs or errors, please let me know.
+Goodbye
