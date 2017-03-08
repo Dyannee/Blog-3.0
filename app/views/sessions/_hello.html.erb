@@ -1,0 +1,15 @@
+<% if @auth && @auth.errors.any? %>
+  <div class="text-center"><button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Errors</button></div>
+  <div id="demo" class="collapse alert alert-danger">
+    <div id="error_explanation" class="text-center">
+      <h2>
+        <%= pluralize(@auth.errors.count, "error") %> impided you from logging in
+      </h2>
+      <ul>
+        <% @auth.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

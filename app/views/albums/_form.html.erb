@@ -1,0 +1,34 @@
+<%= form_for @album do |f| %>
+  <% if @album.errors.any? %>
+    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Errors</button>
+    <div id="demo" class="collapse alert alert-danger">
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@album.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @album.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  <div class="panel-default">
+    <div class="form-group <%= 'has-error' if @album.errors.include?(:title) %>">
+
+        <%= f.text_field :title, :placeholder => "Title", class: "form-control" %></h1>
+      </div>
+        <div class="form-group">
+
+
+        <%= f.text_area :body, class: "form-control", rows: 9 %>
+      </div>
+        <div class="form-group">
+
+        <%= f.submit 'Create New Album', class: "btn btn-block" %>
+
+    </div>
+  </div>
+<% end %>

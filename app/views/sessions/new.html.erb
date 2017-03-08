@@ -1,0 +1,10 @@
+<%= form_for(:authuser, url: login_path) do |f| %>
+  <%= render 'hello' %>
+  <div class="form-signin">
+    <span class="text-center"><p class="input_title">Email</p></span>
+    <%= f.email_field :email, :placeholder => 'Email', class: "form-control" %>
+    <span class="text-center"><p class="input_title">Password</p></span>
+    <%= f.password_field :password, :placeholder => 'Password', class: "form-control" %>
+    <%= f.submit 'Sign in', class: "btn btn-block" %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<div>
+  <h1 class="text-center"><%= @album.title %></h1>
+
+  <p class="text-center"><%= @album.body %></p>
+</div>
+<%= render @album.comments %>
+
+<%= render 'comments/form' %>
+<div class="col-md-12">
+  <%= link_to 'Back', '/', class: 'btn btn-primary' %>
+  <% if current_user.id == @album.user.id %>
+    <%= link_to 'Edit', edit_album_path, class: 'btn btn-primary pull-right' %>
+  <% end %>
+</div>

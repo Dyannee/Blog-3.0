@@ -1,0 +1,23 @@
+<div class="blog-header">
+  <h1 class="blog-title text-center"><%= @user.first_name %> album. </h1>
+</div>
+<div class="blog-main">
+  <% @album.each do |f| %>
+    <div class="blog-post">
+
+      <h2 class="blog-post-title"><%= f.title %></h2>
+
+      <h6 class="blog-post-meta text-muted">Created at <%= l f.created_at , format: '%a, %d, %m' %></h6>
+
+      <p><%= f.body %></p>
+      <%= link_to 'Show', album_path(f), class: "btn btn-sm btn-default" %>
+      <div class="btn btn-group btn-group-sm pull-right">
+      <% if current_user.id == f.user_id %>
+        <%= link_to 'Edit', edit_album_path(f), class: "btn btn-default" %>
+        <%= link_to 'Delete', album_path(f), method: :delete,
+                                                  data: { confirm: 'Sure?' }, class: "btn btn-default"%>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<div class="block col-md-12">
+  <%= form_for([@album, @album.comments.build]) do |f| %>
+  <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@album.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @album.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <strong><p>Leave a comment</p></strong>
+    <%= f.text_area :comment, class: 'form-control' %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.submit 'Comment.', class: 'btn' %>
+  <% end %>
+</div>
